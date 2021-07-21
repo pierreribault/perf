@@ -1,0 +1,31 @@
+name: perf
+recipe: laravel
+
+env_file:
+  - blackfire.env
+
+config:
+  php: '8.0'
+  webroot: laravel/public
+  xdebug: false
+  via: nginx:1.18
+  database: mariadb:10.4
+  cache: redis:5
+services:
+  appserver:
+    type: php:8.0
+    config:
+      conf: php.ini
+    build_as_root:
+      - ./blackfireInit.sh
+
+tooling:
+  blackfire:
+    service: appserver
+    user: root
+  blackfire-agent:service:
+    description: Start/Stop/Restart Blackfire agent service
+    cmd:
+      - /etc/init.d/blackfire-agent
+    service: appserver
+    user: root
