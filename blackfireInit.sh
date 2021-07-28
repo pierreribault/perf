@@ -19,3 +19,5 @@ apt-get install blackfire-php
 
 # Enable Blackfire Probe
 docker-php-ext-enable blackfire
+
+

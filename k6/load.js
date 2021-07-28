@@ -13,7 +13,7 @@ export let options = {
   },
 };
 
-const BASE_URL = 'http://localhost:55607';
+const BASE_URL = __ENV.APP_HOST;
 const EMAIL = 'test@test.fr';
 const PASSWORD = 'password';
 

@@ -20,7 +20,7 @@ export default {
   },
 
   axios: {
-    baseURL: 'http://localhost:55607',
+    baseURL: 'http://localhost:49478',
     credentials: true,
   },
 
@@ -55,7 +55,7 @@ export default {
     strategies: {
       'laravelSanctum': {
         provider: 'laravel/sanctum',
-        url: 'http://localhost:55607'
+        url: 'http://localhost:49478'
       },
     },
     redirect: {
@@ -70,3 +70,4 @@ export default {
   build: {
   }
 }
+

@@ -3,13 +3,17 @@ import { check, sleep } from 'k6';
 
 export let options = {
   stages: [
-    { duration: '10s', target: 100 }, // below normal load
-    { duration: '1m', target: 100 },
-    { duration: '10s', target: 600 }, // spike to 1400 users
-    { duration: '3m', target: 600 }, // stay at 1400 for 3 minutes
-    { duration: '10s', target: 100 }, // scale down. Recovery stage.
-    { duration: '3m', target: 100 },
-    { duration: '10s', target: 0 },
+    { duration: '30s', target: 100 }, // below normal load
+    { duration: '2m', target: 100 },
+    { duration: '30s', target: 200 }, // normal load
+    { duration: '2m', target: 200 },
+    { duration: '30s', target: 300 }, // around the breaking point
+    { duration: '2m', target: 300 },
+    { duration: '30s', target: 400 }, // beyond the breaking point
+    { duration: '2m', target: 400 },
+    { duration: '30s', target: 500 }, // beyond the breaking point
+    { duration: '2m', target: 500 },
+    { duration: '30s', target: 0 }, // scale down. Recovery stage.
   ],
 };
 

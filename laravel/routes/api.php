@@ -24,6 +24,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/fake', [FakeController::class, 'index']);
     Route::post('/fake', [FakeController::class, 'store']);
     Route::delete('/fake/{id}', [FakeController::class, 'destroy']);
+    Route::get('/fake/complexity', [FakeController::class, 'complexity']);
 });
 
 

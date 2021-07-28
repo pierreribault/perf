@@ -66,4 +66,24 @@ class FakeController extends Controller
 
         return response()->json('', 204);
     }
+
+    /**
+     * Complexity O(n2)
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function complexity(): JsonResponse
+    {
+        $quantity = 400;
+
+        $result = [];
+
+        for ($i = 0; $i <= $quantity; $i++) {
+            for ($j = 0; $j <= $quantity; $j++) {
+                $result[] = $i + $j;
+            }
+        }
+
+        return response()->json($result);
+    }
 }
